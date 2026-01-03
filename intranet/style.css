@@ -1,0 +1,156 @@
+/*
+ * Retro low‑tech styling for the dystopian ARG.
+ * The design uses dark backgrounds, monospaced fonts and neon colours to evoke
+ * an old CRT terminal. Scanlines and subtle animations enhance the low‑pro
+ * aesthetic. Feel free to tweak colours or effects.
+ */
+
+/* CSS variables for colours and fonts */
+:root {
+  --bg-color: #0d0d0d;
+  --fg-color: #00ff9f;
+  --accent-color: #ff0077;
+  --error-color: #ff4444;
+  --success-color: #00cc66;
+  --mono-font: 'Courier New', Courier, monospace;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--fg-color);
+  font-family: var(--mono-font);
+  height: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: var(--accent-color);
+}
+
+.language-switcher {
+  margin-top: 1rem;
+}
+.language-switcher button {
+  margin: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border: 1px solid var(--fg-color);
+  color: var(--fg-color);
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s, color 0.2s;
+}
+.language-switcher button:hover {
+  background: var(--fg-color);
+  color: var(--bg-color);
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.action-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: background 0.3s, transform 0.1s;
+}
+.action-button:hover {
+  background: var(--fg-color);
+  color: var(--bg-color);
+}
+.action-button:active {
+  transform: scale(0.97);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Console styling */
+.console-prompt {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.console-input {
+  width: 100%;
+  padding: 0.5rem;
+  background: #111;
+  border: 1px solid var(--fg-color);
+  color: var(--fg-color);
+  font-family: var(--mono-font);
+  font-size: 1rem;
+}
+
+.console-message {
+  margin-top: 0.5rem;
+  color: var(--error-color);
+}
+
+/* Success section styling */
+#successSection h2 {
+  color: var(--success-color);
+}
+#successClue a {
+  color: var(--fg-color);
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scanline effect for CRT feel */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05) 0,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 100;
+  opacity: 0.3;
+}

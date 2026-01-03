@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relic Terminal</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="relic.js"></script>
+  <!--
+    The relic page continues the narrative of the ARG. Here you must decode
+    a binary string to demonstrate your ability to manipulate low‑level data.
+    The secret answer is hidden in this comment: it decodes to 'hack'.
+
+    ARG designers often release information gradually to create ambiguity and
+    maintain immersion; social media and websites can be used to drip clues
+    over time【526078867550295†L235-L247】.  This static puzzle invites players to
+    research binary encoding and decode the message themselves.
+  -->
+</head>
+<body>
+  <header>
+    <h1 id="relicTitle"></h1>
+    <p id="tagline" class="tagline"></p>
+    <nav class="language-switcher">
+      <button data-lang="en">English</button>
+      <button data-lang="fr">Français</button>
+      <button data-lang="lorem">Lorem</button>
+    </nav>
+  </header>
+  <main>
+    <section class="section">
+      <p id="relicIntro"></p>
+      <p><code id="relicPuzzle" class="puzzle"></code></p>
+      <p id="relicHint" class="hint"></p>
+    </section>
+    <section class="section" id="inputSection">
+      <label for="decodeInput" id="relicPrompt" class="console-prompt"></label>
+      <input type="text" id="decodeInput" class="console-input" autocomplete="off" />
+      <button id="decodeButton" class="action-button">CHECK</button>
+      <p id="relicMessage" class="console-message"></p>
+    </section>
+    <section class="section hidden" id="relicSuccessSection">
+      <p id="relicSuccess"></p>
+    </section>
+    <p><a href="index.html" id="backLink"></a></p>
+  </main>
+  <footer>
+    <p>&copy; 2026 Cult of the Low‑Tech Anarcho‑Geeks</p>
+  </footer>
+</body>
+</html>
